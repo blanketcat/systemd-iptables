@@ -17,5 +17,18 @@
 
 # SSH
 -A INPUT -p tcp -i enp0s25 --dport 22 -m state --state NEW -j ACCEPT
+-A OUTPUT -p tcp -i enp0s25 --dport 22 -m state NEW,ESTABLISHED -j ACCEPT
+
+# DNS
+-A INPUT -p udp -i enp0s25 --dport 53 -m state --state ESTABLISHED -j ACCEPT
+-A OUTPUT -p udp -i enp0s25 --dport 53 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# HTTP(S)
+-A INPUT -p tcp -i enp0s25 --dport 80,443 -m state --state ESTABLISHED -j ACCEPT
+-A OUTPUT -p tcp -i enp0s25 --dport 80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# ICMP
+-A INPUT -p icmp -j DROP
+-A OUTPUT -p icmp -j ACCEPT
 
 COMMIT
