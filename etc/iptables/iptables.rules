@@ -31,4 +31,19 @@
 -A INPUT -p icmp -j DROP
 -A OUTPUT -p icmp -j ACCEPT
 
+# IP_ADDRESSES
+# -A INPUT -s 8.8.8.8 -j DROP
+# -A OUTPUT -d 8.8.8.8 -j DROP
+
+# DOMAINS
+# -A OUTPUT -p all -d facebook.com
+# -A OUTPUT -p all -d google.com
+# -A OUTPUT -p all -d apple.com
+# The Clouds
+# -A OUTPUT -p all -d amazon.com
+# -A OUTPUT -p all -d akamai.com
+# -A OUTPUT -p all -d cloudflare.com
+# -A OUTPUT -p all -d level3.com
+# -A OUTPUT -p all -d digitalocean.com
+
 COMMIT
