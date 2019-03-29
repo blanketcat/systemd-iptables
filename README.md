@@ -17,3 +17,5 @@ systemctl start iptables.service
 systemctl start ip6tables.service
 ```
 
+### Repo is deprecated.
+Evidently you cannot change a public fork of a repo to a private one. Don't add rules here. Actual development has moved to the private repo.
